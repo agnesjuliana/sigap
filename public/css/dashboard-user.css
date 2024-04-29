@@ -1,0 +1,37 @@
+.wrap-table {
+  padding: 24px 24px 0px 24px;
+  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.wrap-detail {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 16px;
+  column-gap: 24px;
+}
+
+.detail-img {
+  width: 200px;
+  object-fit: contain;
+}
+
+.label-h6 {
+  font-weight: 700;
+}
+
+.btn-response {
+  background-color: #0077b6;
+  color: #fff;
+  border-radius: 30px;
+  padding: 8px 24px 8px 24px;
+  transition: all 0.4s ease-in;
+}
+
+.btn-response a {
+  color: #fff;
+}
+.btn-response:hover {
+  background-color: #00b6a1;
+  color: #fff;
+}

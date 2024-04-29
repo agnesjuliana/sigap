@@ -1,0 +1,11 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+thead {
+  color: red;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
