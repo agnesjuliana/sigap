@@ -22,10 +22,15 @@ class LoginController extends Controller
         ]);
 
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('dashboard');
+
+            if(Auth::user()->role == 'ADMIN') {
+                return redirect()->intended('dashboard/admin');
+            } else if(Auth::user()->role == 'USER') {
+                return redirect()->intended('dashboard/user');
+            }
         }
 
-        return redirect('login')->withErrors('The provided credentials do not match our records.');
+        return redirect('login')->with('error', 'The provided credentials do not match our records.');
     }
 
     public function logout()

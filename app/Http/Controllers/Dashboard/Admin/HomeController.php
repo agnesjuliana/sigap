@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Landing;
+namespace App\Http\Controllers\Dashboard\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('landing.welcome');
+        return view('dashboard.admin.home');
     }
 }
