@@ -1,6 +1,10 @@
 @extends('master')
 @section('title', 'Dashboard User')
 
+@section('css')
+    <link href="{{ asset('css/dashboard-user.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
     <!-- ======= Hero Section ======= -->
     <section id="dashboard-user" class="hero">
@@ -16,7 +20,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('assets/img/hero-img.svg') }}" class="img-fluid" alt="" data-aos="zoom-out"
+                    <img src="{{ asset('img/hero-img.svg') }}" class="img-fluid" alt="" data-aos="zoom-out"
                         data-aos-delay="100">
                 </div>
             </div>
@@ -24,7 +28,7 @@
     </section>
     <!-- End Hero Section -->
 
-    {{-- <section id="report" class="contact" style="padding-top:16px">
+    <section id="report" class="contact" style="padding-top:16px">
         <div class="container" data-aos="fade-up">
 
             <div class="section-header" style="padding-bottom:16px">
@@ -46,7 +50,7 @@
                         @foreach ($reports as $report)
                             <tr>
                                 <td>{{ $report->report_id }}</td>
-                                <td>{{ $report->type }}</td>
+                                <td>{{ $report->type->name }}</td>
                                 <td>{{ $report->longitude }}</td>
                                 <td>{{ $report->latitude }}</td>
                                 <td>{!! $report->status == 'pending'
@@ -78,7 +82,7 @@
                                             <div class="wrap-detail">
                                                 <div class="content-detail">
                                                     <h6 class="label-h6">Tipe</h6>
-                                                    <p>{{ $report->type }}</p>
+                                                    <p>{{ $report->type->name }}</p>
                                                 </div>
                                                 <div class="content-detail">
                                                     <h6 class="label-h6">Deskripsi</h6>
@@ -89,8 +93,15 @@
                                                     <p>{{ $report->created_at }}</p>
                                                 </div>
                                                 <div class="content-detail">
+                                                    <h6 class="label-h6">Alamat</h6>
+                                                    <p>{{ $report->address }}</p>
+                                                </div>
+                                                <div class="content-detail">
                                                     <h6 class="label-h6">Foto</h6>
-                                                    <img src="{{ $report->img_path }}" alt="img" class="detail-img">
+                                                    <div class="img-container">
+                                                        <img src="{{ asset('storage/' . $report->reportFile->img_path) }}"
+                                                            alt="img" class="detail-img">
+                                                    </div>
                                                 </div>
                                                 <div class="content-detail">
                                                     <h6 class="label-h6">Petugas</h6>
@@ -143,7 +154,7 @@
                 </nav>
             </div>
         </div>
-    </section> --}}
+    </section>
     <!-- End Contact Section -->
 @endsection
 

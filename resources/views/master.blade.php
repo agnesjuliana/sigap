@@ -30,6 +30,8 @@
 
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
+    @yield('css')
 </head>
 
 <body>

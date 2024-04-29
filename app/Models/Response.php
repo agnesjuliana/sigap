@@ -22,6 +22,11 @@ class Response extends Model
         return $this->belongsTo(Report::class, 'report_id', 'report_id');
     }
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class, 'type_id', 'type_id');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'user_id');

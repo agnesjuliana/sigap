@@ -25,7 +25,3 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard/user/form-lapor', [App\Http\Controllers\Dashboard\User\FormLaporController::class, 'index'])->name('user.form-lapor');
     Route::post('dashboard/user/form-lapor', [App\Http\Controllers\Dashboard\User\FormLaporController::class, 'store'])->name('user.form-lapor.post');
 });
-
-// Route::get('dashboard', function () {
-//     return view('dashboard/user/home');
-// })->name('home')->middleware('auth');

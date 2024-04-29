@@ -44,7 +44,8 @@ class FormLaporController extends Controller
 
         // Handle image upload and store file path in report_files table
         if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('report_images');
+            $imagePath = $request->file('image')->store('public/report_images');
+            $finalImagePath = preg_replace('/^public\//', '', $imagePath);
 
             // Check if image upload failed
             if (!$imagePath) {
@@ -53,7 +54,7 @@ class FormLaporController extends Controller
 
             $reportFile = new ReportFile();
             $reportFile->report_id = $report->report_id;
-            $reportFile->img_path = $imagePath;
+            $reportFile->img_path = $finalImagePath;
             $reportFile->save();
         } else {
             return redirect()->back()->with('error', 'No image uploaded.');
