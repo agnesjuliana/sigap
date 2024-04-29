@@ -22,8 +22,9 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users', 'user_id')->onDelete('cascade');
             $table->foreignId('type_id')->constrained('types', 'type_id')->onDelete('cascade');
             $table->text('description');
-            $table->decimal('longitude', 10, 8);
-            $table->decimal('latitude', 10, 8);
+            $table->text('address');
+            $table->decimal('longitude', 15, 8);
+            $table->decimal('latitude', 15, 8);
             $table->string('status', 50);
             $table->timestamps();
         });

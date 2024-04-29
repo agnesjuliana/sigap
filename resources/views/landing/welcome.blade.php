@@ -13,14 +13,18 @@
                         <br>Wujudkan Keselamatan Bersama!
                     </p>
                     <div class="d-flex justify-content-center justify-content-lg-start">
-                        {{-- @if (isset($_SESSION['username'])) --}}
-                        <a href="dashboard/user-home.php" class="btn-get-started">Dashboard</a>
-                        {{-- @else --}}
-                        <a href="{{ route('login') }}" class="btn-get-started">Masuk</a>
-                        <a href="{{ route('register') }}"  class="btn-watch-video d-flex align-items-center"><span>Daftar
-                                Akun</span></a>
-                        {{-- @endif --}}
+                        @guest
+                            <a href="{{ route('login') }}" class="btn-get-started">Masuk</a>
+                            <a href="{{ route('register') }}" class="btn-watch-video d-flex align-items-center"><span>Daftar Akun</span></a>
+                        @else
+                            @if(Auth::user()->role === 'ADMIN')
+                                <a href="{{ route('admin.home') }}" class="btn-get-started">Dashboard</a>
+                            @else
+                                <a href="{{ route('user.home') }}" class="btn-get-started">Dashboard</a>
+                            @endif
+                        @endguest
                     </div>
+                    
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
                     <img src="{{ asset('img/hero-img.svg') }}" class="img-fluid" alt="" data-aos="zoom-out"

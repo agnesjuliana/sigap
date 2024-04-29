@@ -15,12 +15,15 @@ Route::post('register', [App\Http\Controllers\Auth\RegisterController::class, 'r
 
 Route::get('login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login.post');
-Route::post('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 // Auth - dashboard
 Route::middleware('auth')->group(function () {
     Route::get('dashboard/user', [App\Http\Controllers\Dashboard\User\HomeController::class, 'index'])->name('user.home');
     Route::get('dashboard/admin', [App\Http\Controllers\Dashboard\Admin\HomeController::class, 'index'])->name('admin.home');
+
+    Route::get('dashboard/user/form-lapor', [App\Http\Controllers\Dashboard\User\FormLaporController::class, 'index'])->name('user.form-lapor');
+    Route::post('dashboard/user/form-lapor', [App\Http\Controllers\Dashboard\User\FormLaporController::class, 'store'])->name('user.form-lapor.post');
 });
 
 // Route::get('dashboard', function () {
