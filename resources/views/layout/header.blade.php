@@ -30,7 +30,7 @@
                             <li><a href="{{ route('user.home') }}">Dashboard</a></li>
                         @endif
                     @endif
-                    <li><a href="{{ url('/') }}">Log Out</a></li>
+                    <li><a href="{{ route('logout') }}">Log Out</a></li>
 
                 </ul>
             </nav><!-- .navbar -->
