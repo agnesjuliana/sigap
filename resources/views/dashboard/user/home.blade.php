@@ -10,7 +10,8 @@
     <section id="dashboard-user" class="hero">
         <div class="container position-relative">
             <div class="row gy-5" data-aos="fade-in">
-                <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
+                <div
+                    class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
                     <h2>Selamat Datang, <u>{{ Auth::user()->name }}</u></h2>
                     <p>Sampaikan Laporan Bencana Langsung ke Pemerintah
                         <br>Wujudkan Keselamatan Bersama!
@@ -53,7 +54,7 @@
                                 <td>{{ $report->type->name }}</td>
                                 <td>{{ $report->longitude }}</td>
                                 <td>{{ $report->latitude }}</td>
-                                <td>{!! $report->status == 'pending'
+                                <td>{!! $report->status == 'Pending'
                                     ? '<span class="badge" style="background-color: #f85a40;">Pending</span>'
                                     : '<span class="badge" style="background-color: #0077b6;">Selesai</span>' !!}</td>
                                 <td>

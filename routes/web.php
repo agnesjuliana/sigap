@@ -21,6 +21,9 @@ Route::get('logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'
 Route::middleware('auth')->group(function () {
     Route::get('dashboard/user', [App\Http\Controllers\Dashboard\User\HomeController::class, 'index'])->name('user.home');
     Route::get('dashboard/admin', [App\Http\Controllers\Dashboard\Admin\HomeController::class, 'index'])->name('admin.home');
+    Route::get('dashboard/admin/pengaduan', [App\Http\Controllers\Dashboard\Admin\ReportController::class, 'index'])->name('admin.report');
+    Route::post('dashboard/admin/pengaduan/response', [App\Http\Controllers\Dashboard\Admin\ResponseController::class, 'store'])->name('admin.response.post');
+    Route::get('dashboard/admin/pengaduan/report', [App\Http\Controllers\Dashboard\Admin\ReportController::class, 'generateReport'])->name('admin.report.generate');
 
     Route::get('dashboard/user/form-lapor', [App\Http\Controllers\Dashboard\User\FormLaporController::class, 'index'])->name('user.form-lapor');
     Route::post('dashboard/user/form-lapor', [App\Http\Controllers\Dashboard\User\FormLaporController::class, 'store'])->name('user.form-lapor.post');

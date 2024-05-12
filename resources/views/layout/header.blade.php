@@ -7,8 +7,10 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a href="{{ url('/') }}">Beranda</a></li>
-                    <li class="dropdown"><a href="#"><span>Layanan</span> <i
-                                class="bi bi-chevron-down dropdown-indicator"></i></a>
+                    <li class="dropdown">
+                        <a href="#"><span>Layanan</span>
+                            <i class="bi bi-chevron-down dropdown-indicator"></i>
+                        </a>
                         <ul>
                             <li><a href="#">Lapor Bencana</a></li>
                             <li><a href="#">Kontak Darurat</a></li>
@@ -17,6 +19,17 @@
                         </ul>
                     </li>
                     <li><a href="{{ route('about-us') }}">Tentang Kami</a></li>
+                    @if (Auth::user())
+                        @if (Auth::user()->role == 'ADMIN')
+                            <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
+                        @elseif (Auth::user()->role == 'PETUGAS')
+                            <li><a href="{{ route('petugas.home') }}">Dashboard</a></li>
+                        @elseif (Auth::user()->role == 'USER')
+                            <li><a href="{{ route('user.home') }}">Dashboard</a></li>
+                        @endif
+                    @endif
+                    <li><a href="{{ url('/') }}">Log Out</a></li>
+
                 </ul>
             </nav><!-- .navbar -->
 
