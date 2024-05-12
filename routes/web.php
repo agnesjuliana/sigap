@@ -25,6 +25,11 @@ Route::middleware('auth')->group(function () {
     Route::post('dashboard/admin/pengaduan/response', [App\Http\Controllers\Dashboard\Admin\ResponseController::class, 'store'])->name('admin.response.post');
     Route::get('dashboard/admin/pengaduan/report', [App\Http\Controllers\Dashboard\Admin\ReportController::class, 'generateReport'])->name('admin.report.generate');
 
+    Route::get('dashboard/admin/user', [App\Http\Controllers\Dashboard\Admin\UserAdminController::class, 'index'])->name('admin.user');
+    Route::post('dashboard/admin/user', [App\Http\Controllers\Dashboard\Admin\UserAdminController::class, 'store'])->name('admin.user.post');
+    Route::put('dashboard/admin/user/{id}', [App\Http\Controllers\Dashboard\Admin\UserAdminController::class, 'update'])->name('admin.user.put');
+    Route::delete('dashboard/admin/user/{id}', [App\Http\Controllers\Dashboard\Admin\UserAdminController::class, 'destroy'])->name('admin.user.delete');
+
     Route::get('dashboard/user/form-lapor', [App\Http\Controllers\Dashboard\User\FormLaporController::class, 'index'])->name('user.form-lapor');
     Route::post('dashboard/user/form-lapor', [App\Http\Controllers\Dashboard\User\FormLaporController::class, 'store'])->name('user.form-lapor.post');
 });

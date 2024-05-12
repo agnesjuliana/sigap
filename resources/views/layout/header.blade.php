@@ -22,6 +22,8 @@
                     @if (Auth::user())
                         @if (Auth::user()->role == 'ADMIN')
                             <li><a href="{{ route('admin.home') }}">Dashboard</a></li>
+                            <li><a href="{{ route('admin.report') }}">Laporan</a></li>
+                            <li><a href="{{ route('admin.user') }}">User</a></li>
                         @elseif (Auth::user()->role == 'PETUGAS')
                             <li><a href="{{ route('petugas.home') }}">Dashboard</a></li>
                         @elseif (Auth::user()->role == 'USER')
