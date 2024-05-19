@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserAdminController extends Controller
 {
@@ -20,7 +21,7 @@ class UserAdminController extends Controller
         $role = 'ADMIN';
         $temp = explode(" ", $name);
         $password = $temp[0] . "123";
-        $password = md5($password);
+        $password = Hash::make($password);
 
         try {
             $user = new User;
