@@ -21,13 +21,13 @@ class UserAdminController extends Controller
         $role = 'ADMIN';
         $temp = explode(" ", $name);
         $password = $temp[0] . "123";
-        $password = Hash::make($password);
+        $passwordHash = Hash::make($password);
 
         try {
             $user = new User;
             $user->name = $name;
             $user->email = $email;
-            $user->password = $password;
+            $user->password = $passwordHash;
             $user->role = $role;
             $user->save();
         } catch (\Exception $e) {
