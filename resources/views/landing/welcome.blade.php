@@ -1,5 +1,5 @@
 @extends('master')
-@section('title', 'Sutas - Pelayanan Tanggap Darurat Bencana')
+@section('title', 'Sigap - Pelayanan Tanggap Darurat Bencana')
 
 @section('content')
 
@@ -8,7 +8,7 @@
         <div class="container position-relative">
             <div class="row gy-5" data-aos="fade-in">
                 <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-                    <h2>Sutas, </h2>
+                    <h2>Sigap, </h2>
                     <p>Sampaikan Laporan Bencana Langsung ke Pemerintah
                         <br>Wujudkan Keselamatan Bersama!
                     </p>

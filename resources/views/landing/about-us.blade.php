@@ -36,10 +36,10 @@
                 <div class="row justify-content-between gy-4 mt-4">
                     <div class="col-lg-8">
                         <div class="portfolio-description">
-                            <h2>SUTAS (Surabaya Tanggap Selamat)</h2>
+                            <h2>SIGAP (Surabaya Tanggap Selamat)</h2>
                             <p>
-                                SUTAS (Surabaya Tanggap Selamat) adalah sebuah platform untuk memfasilitasi pelaporan
-                                kejadian bencana yang terjadi di wilayah Surabaya. Dengan menggunakan SUTAS, masyarakat
+                                SIGAP (Surabaya Tanggap Selamat) adalah sebuah platform untuk memfasilitasi pelaporan
+                                kejadian bencana yang terjadi di wilayah Surabaya. Dengan menggunakan SIGAP, masyarakat
                                 memiliki kemudahan dan kecepatan dalam memberikan informasi terkait bencana yang sedang
                                 terjadi,sehingga memungkinkan pihak berwenang, termasuk badan penanggulangan bencana dan
                                 lembaga kemanusiaan, untuk merespons dengan lebih efektif dalam memberikan bantuan dan
@@ -49,7 +49,7 @@
                                 bagi masyarakat Surabaya.
                             </p>
                             <p>
-                                Selain itu, SUTAS juga memberikan manfaat dalam hal peningkatan kesadaran masyarakat
+                                Selain itu, SIGAP juga memberikan manfaat dalam hal peningkatan kesadaran masyarakat
                                 akan potensi risiko bencana yang ada di sekitar mereka. Dengan adanya akses yang mudah
                                 untuk melaporkan kejadian bencana, masyarakat menjadi lebih teredukasi tentang
                                 langkah-langkah yang dapat diambil untuk mengurangi risiko dan persiapan yang perlu

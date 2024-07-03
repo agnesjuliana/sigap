@@ -68,7 +68,7 @@
                                     <td>{{ $report->latitude }}</td>
                                     <td>{!! $report->status == 'Pending'
                                         ? '<span class="badge" style="background-color: #f85a40;">Pending</span>'
-                                        : '<span class="badge" style="background-color: #0077b6;">Selesai</span>' !!}</td>
+                                        : '<span class="badge" style="background-color: #02A367;">Selesai</span>' !!}</td>
                                     <td>
                                         <button type="button" style="padding: 0; text-align:center;" class="btn"
                                             data-bs-toggle="modal" data-bs-target="#response{{ $report->report_id }}">
@@ -79,7 +79,7 @@
                                                 xml:space="preserve" transform="rotate(0)" stroke="#fff">
                                                 <g id="SVGRepo_bgCarrier" stroke-width="0">
                                                     <rect x="-27.6" y="-27.6" width="147.20" height="147.20" rx="73.6"
-                                                        fill="#00b6a1" strokewidth="0"></rect>
+                                                        fill="#04714a" strokewidth="0"></rect>
                                                 </g>
                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
                                                     stroke="#CCCCCC" stroke-width="0.184"></g>
@@ -93,7 +93,7 @@
                                         <button type="button" style="padding: 0;" class="btn" data-bs-toggle="modal"
                                             data-bs-target="#detail{{ $report->report_id }}">
                                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30"
-                                                height="30" viewBox="0 0 72 72" style="fill:#0077b6;">
+                                                height="30" viewBox="0 0 72 72" style="fill:#02A367;">
                                                 <path
                                                     d="M36,12c13.255,0,24,10.745,24,24c0,13.255-10.745,24-24,24S12,49.255,12,36C12,22.745,22.745,12,36,12z M39,45	c0-0.901,0-6.099,0-7c0-1.657-1.343-3-3-3c-1.657,0-3,1.343-3,3c0,0.901,0,6.099,0,7c0,1.657,1.343,3,3,3C37.657,48,39,46.657,39,45	z M36,32c2.209,0,4-1.791,4-4c0-2.209-1.791-4-4-4s-4,1.791-4,4C32,30.209,33.791,32,36,32z">
                                                 </path>

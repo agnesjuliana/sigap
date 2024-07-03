@@ -2,7 +2,7 @@
     <header id="header" class="header d-flex align-items-center">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-                <h1>Sutas<span>.</span></h1>
+                <h1>Sigap<span>.</span></h1>
             </a>
             <nav id="navbar" class="navbar">
                 <ul>

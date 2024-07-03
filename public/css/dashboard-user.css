@@ -18,10 +18,10 @@
 
 .label-h6 {
   font-weight: 700;
-}
+}  
 
-.btn-response {
-  background-color: #0077b6;
+
+.btn-response {  background-color: #02A367;
   color: #fff;
   border-radius: 30px;
   padding: 8px 24px 8px 24px;
@@ -32,6 +32,6 @@
   color: #fff;
 }
 .btn-response:hover {
-  background-color: #00b6a1;
+  background-color: #04714a;
   color: #fff;
 }

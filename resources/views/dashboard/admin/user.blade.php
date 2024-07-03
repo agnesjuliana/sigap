@@ -53,7 +53,7 @@
                                                 <g id="SVGRepo_bgCarrier" stroke-width="0"
                                                     transform="translate(0,0), scale(1)">
                                                     <rect x="-11.52" y="-11.52" width="47.04" height="47.04" rx="23.52"
-                                                        fill="#00b6a1" strokewidth="0"></rect>
+                                                        fill="#04714a" strokewidth="0"></rect>
                                                 </g>
                                                 <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
                                                     stroke="#CCCCCC" stroke-width="4.8">
@@ -193,7 +193,7 @@
                             <div class="modal-body">
                                 <input type="hidden" name="user_id" value="{{ $user->user_id }}">
                                 <p>Apakah anda yakin ingin menghapus petugas <span
-                                        style="color: #0077b6;">{{ $user->name }}</span>?</p>
+                                        style="color: #02A367;">{{ $user->name }}</span>?</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="submit" class="btn btn-response" name="delete">Hapus</button>

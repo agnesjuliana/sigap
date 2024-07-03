@@ -56,12 +56,12 @@
                                 <td>{{ $report->latitude }}</td>
                                 <td>{!! $report->status == 'Pending'
                                     ? '<span class="badge" style="background-color: #f85a40;">Pending</span>'
-                                    : '<span class="badge" style="background-color: #0077b6;">Selesai</span>' !!}</td>
+                                    : '<span class="badge" style="background-color: #02A367;">Selesai</span>' !!}</td>
                                 <td>
                                     <button type="button" style="padding: 0;" class="btn" data-bs-toggle="modal"
                                         data-bs-target="#detail{{ $report->report_id }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30"
-                                            height="30" viewBox="0 0 72 72" style="fill:#0077b6;">
+                                            height="30" viewBox="0 0 72 72" style="fill:#02A367;">
                                             <path
                                                 d="M36,12c13.255,0,24,10.745,24,24c0,13.255-10.745,24-24,24S12,49.255,12,36C12,22.745,22.745,12,36,12z M39,45	c0-0.901,0-6.099,0-7c0-1.657-1.343-3-3-3c-1.657,0-3,1.343-3,3c0,0.901,0,6.099,0,7c0,1.657,1.343,3,3,3C37.657,48,39,46.657,39,45	z M36,32c2.209,0,4-1.791,4-4c0-2.209-1.791-4-4-4s-4,1.791-4,4C32,30.209,33.791,32,36,32z">
                                             </path>
@@ -125,13 +125,13 @@
                         @if ($reports->currentPage() > 1)
                             <li class="page-item">
                                 <a class="page-link" href="{{ $reports->previousPageUrl() }}" aria-label="Previous">
-                                    <span aria-hidden="true" style="color: #0077b6;">&laquo;</span>
+                                    <span aria-hidden="true" style="color: #02A367;">&laquo;</span>
                                 </a>
                             </li>
                         @else
                             <li class="page-item">
                                 <a class="page-link disabled" href="" aria-label="Previous">
-                                    <span aria-hidden="true" style="color: #0077b6;">&laquo;</span>
+                                    <span aria-hidden="true" style="color: #02A367;">&laquo;</span>
                                 </a>
                             </li>
                         @endif
@@ -141,13 +141,13 @@
                         @if ($reports->hasMorePages())
                             <li class="page-item">
                                 <a class="page-link" href="{{ $reports->nextPageUrl() }}" aria-label="Next">
-                                    <span aria-hidden="true" style="color: #0077b6;">&raquo;</span>
+                                    <span aria-hidden="true" style="color: #02A367;">&raquo;</span>
                                 </a>
                             </li>
                         @else
                             <li class="page-item">
                                 <a class="page-link disabled" href="" aria-label="Next">
-                                    <span aria-hidden="true" style="color: #0077b6;">&raquo;</span>
+                                    <span aria-hidden="true" style="color: #02A367;">&raquo;</span>
                                 </a>
                             </li>
                         @endif

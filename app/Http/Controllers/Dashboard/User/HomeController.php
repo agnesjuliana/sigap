@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $reports = Report::paginate(10);
+        $reports = Report::where('user_id', auth()->id())->paginate(10);
         return view('dashboard.user.home', compact('reports'));
     }
 }

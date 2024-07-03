@@ -22,7 +22,7 @@
 /* Colors */
 :root {
   --color-default: #222222;
-  --color-primary: #0077b6;
+  --color-primary: #02A367;
   --color-secondary: #f85a40;
 }
 
@@ -45,7 +45,7 @@ a {
 }
 
 a:hover {
-  color: #00b6a1;
+  color: #04714a;
   text-decoration: none;
 }
 
@@ -243,7 +243,7 @@ section {
 # Header
 --------------------------------------------------------------*/
 .topbar {
-  background: #0077b6;
+  background: #02A367;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -428,7 +428,7 @@ section {
     font-size: 15px;
     text-transform: none;
     font-weight: 600;
-    color: #0077b6;
+    color: #02A367;
   }
 
   .navbar .dropdown ul a i {
@@ -498,7 +498,7 @@ section {
     inset: 0;
     padding: 50px 0 10px 0;
     margin: 0;
-    background: #0077b6;
+    background: #02A367;
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
@@ -544,7 +544,7 @@ section {
   .navbar .getstarted:hover,
   .navbar .getstarted:focus:hover {
     color: #fff;
-    background: #0077b6;
+    background: #02A367;
   }
 
   .navbar .dropdown ul,
@@ -554,7 +554,7 @@ section {
     padding: 10px 0;
     margin: 10px 20px;
     transition: all 0.5s ease-in-out;
-    background-color: #0077b6;
+    background-color: #02A367;
     border: 1px solid #016da7;
   }
 
@@ -659,7 +659,7 @@ section {
 .about .play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--color-primary) 50%, #0077b6 52%);
+  background: radial-gradient(var(--color-primary) 50%, #02A367 52%);
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -1128,7 +1128,7 @@ section {
 }
 
 .services .service-item:hover .icon:before {
-  background: #00b6a1;
+  background: #04714a;
 }
 
 .services .service-item:hover h3 {
@@ -1863,7 +1863,7 @@ section {
 
 .contact .info-item {
   width: 100%;
-  background-color: #02669c;
+  background-color: #04714a;
   margin-bottom: 20px;
   padding: 20px;
   border-radius: 10px;
@@ -2108,7 +2108,7 @@ section {
   padding: 60px 30px;
   position: relative;
   overflow: hidden;
-  background: rgb(0, 98, 150);
+  background: #04714a;
   box-shadow: 0 0 29px 0 rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
@@ -2140,7 +2140,7 @@ section {
 }
 
 .hero .icon-box:hover {
-  background: #006ba5;
+  background: #04714a;
 }
 
 .hero .icon-box:hover .title a,
@@ -2680,7 +2680,7 @@ section {
 
 .blog .comments .reply-form textarea:focus {
   box-shadow: none;
-  border-color: #0077b6;
+  border-color: #02A367;
 }
 
 .blog .comments .reply-form .form-group {

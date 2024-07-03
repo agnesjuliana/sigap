@@ -5,7 +5,7 @@
         <div class="row gy-4">
             <div class="col-lg-5 col-md-12 footer-info">
                 <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-                    <span>Sutas</span>
+                    <span>Sigap</span>
                 </a>
                 <p>Platform untuk melaporkan kejadian bencana di wilayah Surabaya, memungkinkan masyarakat
                     memberikan
@@ -53,7 +53,7 @@
 
     <div class="container mt-4">
         <div class="copyright">
-            &copy; Copyright 2024<strong><span> MojaKepin</span></strong>. All Rights Reserved
+            &copy; Copyright 2024<strong><span> MPT Avengers</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
         </div>
