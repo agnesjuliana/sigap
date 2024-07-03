@@ -1,0 +1,11 @@
+.heart-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.heart-outline:hover,
+.heart-fill:hover {
+  fill: #02A367;
+  stroke: #02A367;
+}

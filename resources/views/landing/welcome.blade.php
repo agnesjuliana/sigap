@@ -1,6 +1,11 @@
 @extends('master')
 @section('title', 'Sigap - Pelayanan Tanggap Darurat Bencana')
 
+@section('css')
+    <link href="{{ asset('css/dashboard-user.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/landing.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 
     <!-- ======= Hero Section ======= -->
@@ -15,19 +20,20 @@
                     <div class="d-flex justify-content-center justify-content-lg-start">
                         @guest
                             <a href="{{ route('login') }}" class="btn-get-started">Masuk</a>
-                            <a href="{{ route('register') }}" class="btn-watch-video d-flex align-items-center"><span>Daftar Akun</span></a>
+                            <a href="{{ route('register') }}" class="btn-watch-video d-flex align-items-center"><span>Daftar
+                                    Akun</span></a>
                         @else
-                            @if(Auth::user()->role === 'ADMIN')
+                            @if (Auth::user()->role === 'ADMIN')
                                 <a href="{{ route('admin.home') }}" class="btn-get-started">Dashboard</a>
                             @else
                                 <a href="{{ route('user.home') }}" class="btn-get-started">Dashboard</a>
                             @endif
                         @endguest
                     </div>
-                    
+
                 </div>
                 <div class="col-lg-6 order-1 order-lg-2">
-                    <img src="{{ asset('img/hero-img.svg') }}" class="img-fluid" alt="" data-aos="zoom-out"
+                    <img src="{{ asset('img/hero-img.svg') }}" class="img-fluid w-100" alt="" data-aos="zoom-out"
                         data-aos-delay="100">
                 </div>
             </div>
@@ -104,6 +110,186 @@
             </div>
         </section>
         <!-- End Stats Counter Section -->
+
+        <section id="report" class="contact" style="padding-top:16px">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-header" style="padding-bottom:16px">
+                    <h2>Laporan Bencana Terbaru</h2>
+                </div>
+                <div class="wrap-table">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                {{-- <th scope="col">Report ID</th> --}}
+                                <th scope="col">Tipe</th>
+                                <th scope="col">Longitude</th>
+                                <th scope="col">Latitude</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($reports as $index => $report)
+                                <tr>
+                                    <td>{{ $reports->firstItem() + $index }}</td>
+                                    {{-- <td>{{ $report->report_id }}</td> --}}
+                                    <td>{{ $report->type->name }}</td>
+                                    <td>{{ $report->longitude }}</td>
+                                    <td>{{ $report->latitude }}</td>
+                                    <td>{!! $report->status == 'Pending'
+                                        ? '<span class="badge" style="background-color: #f85a40;">Pending</span>'
+                                        : '<span class="badge" style="background-color: #02A367;">Selesai</span>' !!}</td>
+                                    <td>
+                                        <button type="button" style="padding: 0;" class="btn" data-bs-toggle="modal"
+                                            data-bs-target="#detail{{ $report->report_id }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30"
+                                                height="30" viewBox="0 0 72 72" style="fill:#02A367;">
+                                                <path
+                                                    d="M36,12c13.255,0,24,10.745,24,24c0,13.255-10.745,24-24,24S12,49.255,12,36C12,22.745,22.745,12,36,12z M39,45	c0-0.901,0-6.099,0-7c0-1.657-1.343-3-3-3c-1.657,0-3,1.343-3,3c0,0.901,0,6.099,0,7c0,1.657,1.343,3,3,3C37.657,48,39,46.657,39,45	z M36,32c2.209,0,4-1.791,4-4c0-2.209-1.791-4-4-4s-4,1.791-4,4C32,30.209,33.791,32,36,32z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" class="btn heart-button">
+                                            <svg class="heart-outline" xmlns="http://www.w3.org/2000/svg" width="30"
+                                                height="30" viewBox="0 0 24 24" fill="none" stroke="#02A367"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path
+                                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                                                </path>
+                                            </svg>
+                                            <svg class="heart-fill" xmlns="http://www.w3.org/2000/svg" width="30"
+                                                height="30" viewBox="0 0 24 24" fill="#02A367"
+                                                style="display: none;">
+                                                <path
+                                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                        <button type="button" style="padding: 0;" class="btn" data-bs-toggle="modal"
+                                            data-bs-target="#response{{ $report->report_id }}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"
+                                                fill="#02A367" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M16 8c0 3.866-3.582 7-8 7a9 9 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                                            </svg>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="detail{{ $report->report_id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Detail Bencana</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="wrap-detail">
+                                                    <div class="content-detail">
+                                                        <h6 class="label-h6">Tipe</h6>
+                                                        <p>{{ $report->type->name }}</p>
+                                                    </div>
+                                                    <div class="content-detail">
+                                                        <h6 class="label-h6">Deskripsi</h6>
+                                                        <p>{{ $report->description }}</p>
+                                                    </div>
+                                                    <div class="content-detail">
+                                                        <h6 class="label-h6">Tanggal Pengaduan</h6>
+                                                        <p>{{ $report->created_at }}</p>
+                                                    </div>
+                                                    <div class="content-detail">
+                                                        <h6 class="label-h6">Alamat</h6>
+                                                        <p>{{ $report->address }}</p>
+                                                    </div>
+                                                    <div class="content-detail">
+                                                        <h6 class="label-h6">Foto</h6>
+                                                        <div class="img-container">
+                                                            <img src="{{ asset('storage/' . $report->reportFile->img_path) }}"
+                                                                alt="img" class="detail-img">
+                                                        </div>
+                                                    </div>
+                                                    <div class="content-detail">
+                                                        <h6 class="label-h6">Tanggapan</h6>
+                                                        <p>{{ $report->tanggapan ?? '-' }}</p>
+                                                    </div>
+                                                </div>
+                                                <div class="content-detail mt-3">
+                                                    <h6 class="label-h6">Location</h6>
+                                                    <div id="map" style="width: 100%; height: 400px;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="response{{ $report->report_id }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Berikan Komentar</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form action="{{ route('admin.response.post') }}" method="post"
+                                                enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="modal-body">
+                                                    <input type="hidden" name="report_id" value="{{ $report->report_id }}">
+                                                    <input type="hidden" name="user_id" value="{{ Auth::user()->user_id }}">
+                                                    <div class="form-group mt-3">
+                                                        <textarea class="form-control" name="description" rows="7" placeholder="Tanggapan" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-response">Submit</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <nav aria-label="Page navigation example" class="d-flex justify-content-end">
+                        <ul class="pagination">
+                            @if ($reports->currentPage() > 1)
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $reports->previousPageUrl() }}" aria-label="Previous">
+                                        <span aria-hidden="true" style="color: #02A367;">&laquo;</span>
+                                    </a>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link disabled" href="" aria-label="Previous">
+                                        <span aria-hidden="true" style="color: #02A367;">&laquo;</span>
+                                    </a>
+                                </li>
+                            @endif
+                            <!-- Pagination links -->
+                            <!-- Here you should add the pagination links similar to the above example -->
+                            <!-- End Pagination links -->
+                            @if ($reports->hasMorePages())
+                                <li class="page-item">
+                                    <a class="page-link" href="{{ $reports->nextPageUrl() }}" aria-label="Next">
+                                        <span aria-hidden="true" style="color: #02A367;">&raquo;</span>
+                                    </a>
+                                </li>
+                            @else
+                                <li class="page-item">
+                                    <a class="page-link disabled" href="" aria-label="Next">
+                                        <span aria-hidden="true" style="color: #02A367;">&raquo;</span>
+                                    </a>
+                                </li>
+                            @endif
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </section>
 
         <!-- ======= Call To Action Section ======= -->
         <section id="call-to-action" class="call-to-action">
@@ -257,4 +443,61 @@
         </section>
         <!-- End Frequently Asked Questions Section -->
     </main><!-- End #main -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBc8FlCC20cSAqDWNQ9ZwCwkWnxCRvapk"></script>
+    <script>
+        $(document).ready(function() {
+            // Define the coordinates from the report
+            var reportLatitude = {{ $report->latitude }};
+            var reportLongitude = {{ $report->longitude }};
+
+            // Initialize the map
+            function initMap() {
+                var reportLocation = {
+                    lat: reportLatitude,
+                    lng: reportLongitude
+                };
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 14,
+                    center: reportLocation
+                });
+                var marker = new google.maps.Marker({
+                    position: reportLocation,
+                    map: map
+                });
+            }
+
+            // Load the map
+            google.maps.event.addDomListener(window, 'load', initMap);
+        });
+
+        function getPreviewImage(event) {
+            var image = URL.createObjectURL(event.target.files[0]);
+            var imgDiv = document.getElementById('preview');
+            var newImg = document.createElement('img');
+
+            imgDiv.innerHTML = '';
+            newImg.src = image;
+            newImg.width = '200';
+            imgDiv.appendChild(newImg);
+        }
+    </script>
+    <script>
+        document.querySelectorAll('.heart-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const outline = this.querySelector('.heart-outline');
+                const fill = this.querySelector('.heart-fill');
+
+                if (outline.style.display === 'none') {
+                    outline.style.display = '';
+                    fill.style.display = 'none';
+                } else {
+                    outline.style.display = 'none';
+                    fill.style.display = '';
+                }
+            });
+        });
+    </script>
+
 @endsection
