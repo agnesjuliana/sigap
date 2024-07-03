@@ -239,7 +239,7 @@
                                                 @csrf
                                                 <div class="modal-body">
                                                     <input type="hidden" name="report_id" value="{{ $report->report_id }}">
-                                                    <input type="hidden" name="user_id" value="{{ Auth::user()->user_id }}">
+                                                    {{-- <input type="hidden" name="user_id" value="{{ Auth::user()->user_id }}"> --}}
                                                     <div class="form-group mt-3">
                                                         <textarea class="form-control" name="description" rows="7" placeholder="Tanggapan" required></textarea>
                                                     </div>
